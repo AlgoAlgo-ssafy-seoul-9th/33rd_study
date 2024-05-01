@@ -73,7 +73,7 @@ def main():
     R, C, K = map(int, input().split())
     field = tuple(input().strip() for _ in range(R))
 
-    # dfs    
+    # dfs
     def dfs():
         # set구조를 이용하여 2차원 배열을 넘버링하여 visited 처리
         stack = [(R-1, 0, set([(R-1)*C]))]
@@ -85,7 +85,7 @@ def main():
                     # print(visited)
                     cnt += 1
                 continue
-            
+
             # 가지치기
             if len(visited) >= K:
                 continue
@@ -95,11 +95,11 @@ def main():
                 if 0 <= ni < R and 0 <= nj < C:
                     if field[ni][nj] != "T" and (ni*C+nj) not in visited:
                         stack.append((ni,nj, visited.union(set([ni*C+nj]))))
-        
+
         return cnt
 
 
-    print(dfs())        
+    print(dfs())
 
     return
 
@@ -113,6 +113,7 @@ if __name__ == "__main__":
 ### [영준](./컴백홈/영준.py)
 
 ```py
+
 ```
 
 <br/>
@@ -183,11 +184,11 @@ def main():
             calls.sort(reverse=1)   # 역순 정렬
             # 순번 비용 추가
             for i in range(len(calls)):
-                calls[i] += i       
+                calls[i] += i
             return max(calls)   # 가장 큰 값만 전달
         return 0        # 리스트가 비어있으면 (연락할 사람이 없으면)
     print(tree_circuit(0))
-    return 
+    return
 
 
 if __name__ == "__main__":
@@ -204,6 +205,7 @@ if __name__ == "__main__":
 ### [영준](./뉴스%20전하기/영준.py)
 
 ```py
+
 ```
 
 <br/>
@@ -234,7 +236,18 @@ print(ans)
 ### [상미](./Project%20Team/상미.py)
 
 ```py
+import sys
+input = sys.stdin.readline
 
+n = int(input())
+w = list(map(int, input().split()))
+
+w.sort()
+minW = 200000
+for i in range(n):
+    can = w[i]+w[n*2-1-i]
+    minW = min(can, minW)
+print(minW)
 ```
 
 ### [성구](./Project%20Team/성구.py)
@@ -248,7 +261,7 @@ input = sys.stdin.readline
 def main():
     N = int(input())
     members = sorted(list(map(int, input().split())))
-    
+
     # 최소와 최대를 더한다
     # 0번째와 2N-1번째 팀, 1번째와 2N-2번째 팀
     for i in range(N):
@@ -288,6 +301,7 @@ if __name__ == "__main__":
 ### [민웅](./프로세서%20연결하기/민웅.py)
 
 ```py
+
 ```
 
 ### [상미](./프로세서%20연결하기/상미.py)
@@ -299,6 +313,7 @@ if __name__ == "__main__":
 ### [성구](./프로세서%20연결하기/성구.py)
 
 ```py
+
 ```
 
 ### [영준](./프로세서%20연결하기/영준.py)
@@ -306,8 +321,6 @@ if __name__ == "__main__":
 ```py
 
 ```
-
- 
 
 </details>
 
